@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import { Button } from 'semantic-ui-react'
 import './App.scss';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Button>Click Here</Button>
     </div>
   );
 }
