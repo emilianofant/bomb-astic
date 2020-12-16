@@ -1,5 +1,5 @@
 import Core from './core';
-import { Board } from './types';
+import { Board, squareContent } from './types.d';
 
 describe('Core class tests', () => {
   const core = new Core();
@@ -55,6 +55,26 @@ describe('Core class tests', () => {
 
       expect(x).toBeLessThan(3);
       expect(y).toBeLessThan(1);
+    });
+  });
+});
+
+describe('Square / positions actions', () => {
+  const core = new Core();
+
+  describe('Given a 3x3 board with 2 bombs', () => {
+    const board = [
+      [0, 0, 0],
+      [0, 1, 0],
+      [1, 0, 0],
+    ];
+
+    test('Get an empty position', () => {
+      expect(core.getPositionValue(board, [0, 1])).toBe(squareContent.EMPTY);
+    });
+
+    test('Get a bomb position', () => {
+      expect(core.getPositionValue(board, [2, 0])).toBe(squareContent.BOMB);
     });
   });
 });

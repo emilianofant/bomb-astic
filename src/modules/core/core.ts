@@ -1,4 +1,4 @@
-import { Board } from './types';
+import { Board, squareContent } from './types';
 
 /**
  * Core class is the main class that contains the definitions
@@ -62,6 +62,10 @@ class Core {
     }
 
     return board;
+  }
+
+  getPositionValue(board: Board, pos: Array<number>): squareContent {
+    return board[pos[0]][pos[1]];
   }
   /**
    * Function to create a tuple with (x,y) position where a bomb
