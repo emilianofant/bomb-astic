@@ -13,7 +13,6 @@ export enum squareContentTypes {
   DISCOVERED,
 }
 
-// @todo: change for a better name
 export interface IBoardStatus {
   bombsCount: number;
   bombsPositions: Array<Tuple>;

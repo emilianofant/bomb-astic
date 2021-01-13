@@ -1,7 +1,7 @@
 import React from 'react';
 
 class MainMenu extends React.PureComponent {
-  render() {
+  render(): JSX.Element {
     return (
       <div>
         <h2>This is the Main Menu!</h2>
