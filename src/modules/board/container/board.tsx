@@ -1,13 +1,23 @@
 import { FunctionComponent, useContext, useEffect, useState } from 'react';
 import AppContext from '../../store/AppContext';
-import { Board } from '../../core/types.d';
+import { Board, IBoardConfiguration } from '../../core/types.d';
 import './board.scss';
 import Cell from '../cell';
 import Game from '../../core/game';
+import { RouteComponentProps } from 'react-router-dom';
 
-const GameContainer: FunctionComponent = () => {
+// eslint-disable-next-line @typescript-eslint/ban-types
+type GameProps = RouteComponentProps<{}, {}, IBoardConfiguration>;
+
+const GameContainer: FunctionComponent<GameProps> = ({ location }) => {
   const appContext = useContext(AppContext);
-  const [game] = useState(new Game(8, 8, 10));
+  const boardConfiguration = { ...location.state };
+  const { w, h } = boardConfiguration.boardDimensions;
+
+  const [bombsAmount] = useState<number>(
+    Math.floor(w * h * boardConfiguration.selectedDifficulty.factor),
+  );
+  const [game] = useState(new Game(w, h, bombsAmount));
   const [board, setBoard] = useState<Board>([]);
   const [hasInit, setHasInit] = useState<boolean>(false);
   const [isRunning, setIsRunning] = useState<boolean>(false);
@@ -33,10 +43,11 @@ const GameContainer: FunctionComponent = () => {
 
   return (
     <div className="board">
-      <h2>This is the Game!</h2>
+      <h2>Bomb-astic</h2>
       <span>
         {appContext.message} - {isRunning ? 'game on' : 'game over'}
       </span>
+      <span>Amount of bombs: {bombsAmount}</span>
       {board.length > 0 ? (
         <div className="board_wrapper">
           {board.map((r) => {

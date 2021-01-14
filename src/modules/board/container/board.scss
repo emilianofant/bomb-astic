@@ -17,5 +17,9 @@
     height: 30px;
     border: 1px black solid;
     background: lightblue;
+
+    &.-isFlagged {
+      background-color: grey;
+    }
   }
 }

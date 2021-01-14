@@ -31,7 +31,7 @@ class Core {
     for (let i = 0; i < yLength; i++) {
       const row = [];
       for (let y = 0; y < xLength; y++) {
-        row.push({ type: squareContentTypes.EMPTY, value: null });
+        row.push({ type: squareContentTypes.EMPTY, value: null, isFlagged: false });
       }
       result.push(row);
     }
@@ -52,7 +52,7 @@ class Core {
     const res: Array<Tuple> = this._getListRandomPositions(xLength, yLength, amountOfBombs);
 
     res.forEach((t) => {
-      board[t[1]][t[0]] = { type: squareContentTypes.BOMB, value: null };
+      board[t[1]][t[0]] = { type: squareContentTypes.BOMB, value: null, isFlagged: false };
     });
 
     return board;

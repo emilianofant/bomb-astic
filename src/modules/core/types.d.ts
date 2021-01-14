@@ -19,3 +19,18 @@ export interface IBoardStatus {
   bombsPositions: Array<Tuple>;
   emptyPositions: Array<Tuple>;
 }
+
+interface IDifficulty {
+  name: string;
+  factor: number;
+}
+
+interface IBoardConfiguration {
+  boardDimensions: IBoardDimensions;
+  selectedDifficulty: IDifficulty;
+}
+
+interface IBoardDimensions {
+  w: number;
+  h: number;
+}

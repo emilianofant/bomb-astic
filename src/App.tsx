@@ -13,24 +13,15 @@ function App(): JSX.Element {
             <Link to="/" className="item">
               Main Menu
             </Link>
-            <Link to="/Game" className="item">
-              Game
-            </Link>
             <Link to="/dashboard" className="item">
               Dashboard
             </Link>
           </div>
           <div className="ui segment mainSegment">
             <Switch>
-              <Route exact path="/">
-                <MainMenu />
-              </Route>
-              <Route path="/game">
-                <Game />
-              </Route>
-              <Route path="/dashboard">
-                <Dashboard />
-              </Route>
+              <Route exact path="/" component={MainMenu}></Route>
+              <Route path="/game" component={Game}></Route>
+              <Route path="/dashboard" component={Dashboard}></Route>
             </Switch>
           </div>
         </Router>

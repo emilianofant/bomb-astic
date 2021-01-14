@@ -31,7 +31,11 @@ const Cell: FunctionComponent<ICellProps> = (props) => {
   };
 
   return (
-    <div className="board_cell" onClick={onCellClick} onContextMenu={onCellRightClick}>
+    <div
+      className={`board_cell ${boardCell.isFlagged ? '-isFlagged' : ''}`}
+      onClick={onCellClick}
+      onContextMenu={onCellRightClick}
+    >
       {boardCell.type === squareContentTypes.DISCOVERED ? props.boardCell.value : ''}
       {boardCell.isFlagged ? 'F' : ''}
     </div>

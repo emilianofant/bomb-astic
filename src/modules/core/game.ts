@@ -1,12 +1,15 @@
+import { GAME_DIFFICULTIES } from '../../constants/constants';
 import Core from './core';
-import { Board, IBoardStatus, squareContentTypes, Tuple } from './types.d';
+import { Board, IBoardStatus, IDifficulty, squareContentTypes, Tuple } from './types.d';
 
 class Game {
   private _isRunning: boolean;
   private _board: Board;
   private _core: Core;
+  difficulties: IDifficulty[];
 
   constructor(xSize: number, ySize: number, bombsAmount: number) {
+    this.difficulties = GAME_DIFFICULTIES;
     this._isRunning = true;
     this._core = new Core();
     const _newBoard = this._core.createBoard(xSize, ySize);
@@ -130,6 +133,7 @@ class Game {
           board[y][x] = {
             type: squareContentTypes.EMPTY,
             value: bombsCount,
+            isFlagged: false,
           };
         }
       }
