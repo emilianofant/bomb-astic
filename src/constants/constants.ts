@@ -1,14 +1,14 @@
 export const GAME_DIFFICULTIES = [
   {
     name: 'easy',
-    factor: 0.2,
+    factor: 0.1,
   },
   {
     name: 'normal',
-    factor: 0.3,
+    factor: 0.15,
   },
   {
     name: 'hard',
-    factor: 0.4,
+    factor: 0.2,
   },
 ];

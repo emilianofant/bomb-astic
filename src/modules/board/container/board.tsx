@@ -17,10 +17,12 @@ const GameContainer: FunctionComponent<GameProps> = ({ location }) => {
   const [bombsAmount] = useState<number>(
     Math.floor(w * h * boardConfiguration.selectedDifficulty.factor),
   );
-  const [game] = useState(new Game(w, h, bombsAmount));
+  const [game, setGame] = useState(new Game(w, h, bombsAmount));
   const [board, setBoard] = useState<Board>([]);
   const [hasInit, setHasInit] = useState<boolean>(false);
   const [isRunning, setIsRunning] = useState<boolean>(false);
+  const [amountOfFlags, setAmountOfFlags] = useState<number>(0);
+  const [remainingBombs, setRemainingBombs] = useState<number>(bombsAmount);
 
   const handleOnRevealAction = (x: number, y: number) => {
     const updatedBoard = game.pickSquare(x, y, board);
@@ -29,7 +31,13 @@ const GameContainer: FunctionComponent<GameProps> = ({ location }) => {
 
   const handleOnFlagCell = (x: number, y: number) => {
     game.toggleFlaggedCell(x, y, board);
+    setAmountOfFlags(board[y][x].isFlagged ? amountOfFlags + 1 : amountOfFlags - 1);
     setBoard({ ...board });
+  };
+
+  const onRetryClick = () => {
+    setGame(new Game(w, h, bombsAmount));
+    setHasInit(false);
   };
 
   useEffect(() => {
@@ -39,38 +47,51 @@ const GameContainer: FunctionComponent<GameProps> = ({ location }) => {
       setHasInit(true);
     }
     setBoard(game.getBoard());
-  }, [game, board, hasInit]);
+    setRemainingBombs(bombsAmount - amountOfFlags);
+  }, [game, board, hasInit, bombsAmount, amountOfFlags]);
 
   return (
-    <div className="board">
-      <h2>Bomb-astic</h2>
-      <span>
-        {appContext.message} - {isRunning ? 'game on' : 'game over'}
-      </span>
-      <span>Amount of bombs: {bombsAmount}</span>
-      {board.length > 0 ? (
-        <div className="board_wrapper">
-          {board.map((r) => {
-            return (
-              <div key={board.indexOf(r)} className="board_row">
-                {r.map((c) => (
-                  <Cell
-                    boardCell={c}
-                    coordinate={[r.indexOf(c), board.indexOf(r)]}
-                    key={r.indexOf(c)}
-                    onRevealAction={handleOnRevealAction}
-                    onFlagCell={handleOnFlagCell}
-                  ></Cell>
-                ))}
-                <br />
-              </div>
-            );
-          })}
+    <>
+      <h2>{appContext.message}</h2>
+      {isRunning ? (
+        <div className="board">
+          <span>Amount of bombs: {bombsAmount}</span>
+          <span>Amount of bombs flagged: {remainingBombs}</span>
+          {board.length > 0 ? (
+            <div className="board_wrapper">
+              {board.map((r) => {
+                return (
+                  <div key={board.indexOf(r)} className="board_row">
+                    {r.map((c) => (
+                      <Cell
+                        boardCell={c}
+                        coordinate={[r.indexOf(c), board.indexOf(r)]}
+                        key={r.indexOf(c)}
+                        onRevealAction={handleOnRevealAction}
+                        onFlagCell={handleOnFlagCell}
+                      ></Cell>
+                    ))}
+                    <br />
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            ''
+          )}
         </div>
       ) : (
-        ''
+        <div className="ui icon message">
+          <i className="bomb icon"></i>
+          <div className="content">
+            <h3>Game Over</h3>
+            <button className="ui button blue" onClick={onRetryClick}>
+              Try again!
+            </button>
+          </div>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

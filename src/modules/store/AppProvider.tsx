@@ -1,7 +1,7 @@
 import AppContext from './AppContext';
 
 const AppProvider: React.FC = ({ children }) => {
-  const ctx = { message: 'test' };
+  const ctx = { message: 'Bomb-astic' };
 
   return <AppContext.Provider value={ctx}>{children}</AppContext.Provider>;
 };

@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { FunctionComponent } from 'react';
 import { BoardCell, squareContentTypes, Tuple } from '../core/types.d';
 
 interface ICellProps {
@@ -37,7 +37,7 @@ const Cell: FunctionComponent<ICellProps> = (props) => {
       onContextMenu={onCellRightClick}
     >
       {boardCell.type === squareContentTypes.DISCOVERED ? props.boardCell.value : ''}
-      {boardCell.isFlagged ? 'F' : ''}
+      {boardCell.isFlagged ? <i className="flag outline icon"></i> : ''}
     </div>
   );
 };

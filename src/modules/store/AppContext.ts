@@ -5,7 +5,7 @@ type CtxType = {
 };
 
 const AppContext = React.createContext<CtxType>({
-  message: 'appContext',
+  message: 'Bomb-astic',
 });
 
 export default AppContext;
