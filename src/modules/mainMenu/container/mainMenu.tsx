@@ -4,7 +4,10 @@ class MainMenu extends React.PureComponent {
   render(): JSX.Element {
     return (
       <div>
-        <h2>This is the Main Menu!</h2>
+        <h2>Main Menu</h2>
+        <ul>
+          <li>New Game</li>
+        </ul>
       </div>
     );
   }

@@ -1,4 +1,12 @@
 .board {
+  display: flex;
+  flex-direction: column;
+
+  &_wrapper {
+    margin: 20px auto;
+    display: inline-block;
+  }
+
   &_row {
     display: flex;
   }

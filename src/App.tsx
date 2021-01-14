@@ -9,30 +9,30 @@ function App(): JSX.Element {
     <AppProvider>
       <div className="App">
         <Router>
-          <div>
-            <ul>
-              <li>
-                <Link to="/">Main Menu</Link>
-              </li>
-              <li>
-                <Link to="/Game">Game</Link>
-              </li>
-              <li>
-                <Link to="/dashboard">Dashboard</Link>
-              </li>
-            </ul>
+          <div className="ui secondary pointing menu">
+            <Link to="/" className="item">
+              Main Menu
+            </Link>
+            <Link to="/Game" className="item">
+              Game
+            </Link>
+            <Link to="/dashboard" className="item">
+              Dashboard
+            </Link>
           </div>
-          <Switch>
-            <Route exact path="/">
-              <MainMenu />
-            </Route>
-            <Route path="/game">
-              <Game />
-            </Route>
-            <Route path="/dashboard">
-              <Dashboard />
-            </Route>
-          </Switch>
+          <div className="ui segment mainSegment">
+            <Switch>
+              <Route exact path="/">
+                <MainMenu />
+              </Route>
+              <Route path="/game">
+                <Game />
+              </Route>
+              <Route path="/dashboard">
+                <Dashboard />
+              </Route>
+            </Switch>
+          </div>
         </Router>
       </div>
     </AppProvider>

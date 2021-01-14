@@ -166,6 +166,17 @@ class Game {
 
     return { bombsCount, bombsPositions, emptyPositions };
   }
+  /**
+   * Function to flag a specific cell.
+   *
+   * @param  {number} x     The x axis coordinate.
+   * @param  {number} y     The y axis coordinate.
+   * @param  {Board} board  The current board.
+   * @todo: create tests for this spec.
+   */
+  toggleFlaggedCell(x: number, y: number, board: Board): void {
+    board[y][x].isFlagged = !board[y][x].isFlagged;
+  }
 }
 
 export default Game;

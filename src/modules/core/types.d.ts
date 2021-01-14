@@ -3,6 +3,7 @@ export type Board = Array<Array<BoardCell>>;
 export type BoardCell = {
   type: squareContentTypes;
   value: number | null;
+  isFlagged: boolean;
 };
 
 export type Tuple = Array<number>;

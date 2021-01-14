@@ -17,6 +17,11 @@ const GameContainer: FunctionComponent = () => {
     setBoard({ ...updatedBoard });
   };
 
+  const handleOnFlagCell = (x: number, y: number) => {
+    game.toggleFlaggedCell(x, y, board);
+    setBoard({ ...board });
+  };
+
   useEffect(() => {
     setIsRunning(game.getIsRunning());
     if (!hasInit) {
@@ -27,13 +32,13 @@ const GameContainer: FunctionComponent = () => {
   }, [game, board, hasInit]);
 
   return (
-    <div>
+    <div className="board">
       <h2>This is the Game!</h2>
       <span>
         {appContext.message} - {isRunning ? 'game on' : 'game over'}
       </span>
       {board.length > 0 ? (
-        <div>
+        <div className="board_wrapper">
           {board.map((r) => {
             return (
               <div key={board.indexOf(r)} className="board_row">
@@ -43,6 +48,7 @@ const GameContainer: FunctionComponent = () => {
                     coordinate={[r.indexOf(c), board.indexOf(r)]}
                     key={r.indexOf(c)}
                     onRevealAction={handleOnRevealAction}
+                    onFlagCell={handleOnFlagCell}
                   ></Cell>
                 ))}
                 <br />
