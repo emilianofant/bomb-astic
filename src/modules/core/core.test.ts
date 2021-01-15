@@ -10,29 +10,35 @@ describe('Core class tests', () => {
 
   describe('Board creation', () => {
     test('Board creation method returns a Matrix / Array of Array', () => {
-      expect(core.createBoard(1, 1)).toStrictEqual([[{ type: 0, value: null }]]);
+      expect(core.createBoard(1, 1)).toStrictEqual([[{ type: 0, value: null, isFlagged: false }]]);
     });
 
-    test('Board creation method returns a 3x3 Matrix / Array of Array', () => {
+    test('Board creation method returns a 5x3 Matrix / Array of Array', () => {
       const board: Board = [
         [
-          { type: 0, value: null },
-          { type: 0, value: null },
-          { type: 0, value: null },
+          { type: 0, value: null, isFlagged: false },
+          { type: 0, value: null, isFlagged: false },
+          { type: 0, value: null, isFlagged: false },
+          { type: 0, value: null, isFlagged: false },
+          { type: 0, value: null, isFlagged: false },
         ],
         [
-          { type: 0, value: null },
-          { type: 0, value: null },
-          { type: 0, value: null },
+          { type: 0, value: null, isFlagged: false },
+          { type: 0, value: null, isFlagged: false },
+          { type: 0, value: null, isFlagged: false },
+          { type: 0, value: null, isFlagged: false },
+          { type: 0, value: null, isFlagged: false },
         ],
         [
-          { type: 0, value: null },
-          { type: 0, value: null },
-          { type: 0, value: null },
+          { type: 0, value: null, isFlagged: false },
+          { type: 0, value: null, isFlagged: false },
+          { type: 0, value: null, isFlagged: false },
+          { type: 0, value: null, isFlagged: false },
+          { type: 0, value: null, isFlagged: false },
         ],
       ];
 
-      expect(core.createBoard(3, 3)).toStrictEqual(board);
+      expect(core.createBoard(5, 3)).toStrictEqual(board);
     });
 
     test('Add bombs to the board', () => {

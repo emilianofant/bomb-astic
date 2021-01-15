@@ -47,8 +47,8 @@ class Core {
    * @returns Array
    */
   randomizeBombsPlacements(amountOfBombs: number, board: Board): Board {
-    const xLength = board.length;
-    const yLength = board[0].length;
+    const xLength = board[0].length;
+    const yLength = board.length;
     const res: Array<Tuple> = this._getListRandomPositions(xLength, yLength, amountOfBombs);
 
     res.forEach((t) => {

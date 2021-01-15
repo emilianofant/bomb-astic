@@ -15,7 +15,7 @@ const GameContainer: FunctionComponent<GameProps> = ({ location }) => {
   const { w, h } = boardConfiguration.boardDimensions;
 
   const [bombsAmount] = useState<number>(
-    Math.floor(w * h * boardConfiguration.selectedDifficulty.factor),
+    Math.ceil(w * h * boardConfiguration.selectedDifficulty.factor),
   );
   const [game, setGame] = useState(new Game(w, h, bombsAmount));
   const [board, setBoard] = useState<Board>([]);

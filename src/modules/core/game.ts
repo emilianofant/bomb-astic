@@ -151,8 +151,8 @@ class Game {
    * @returns IBoardStatus
    */
   findBombEmptyPositions(board: Board): IBoardStatus {
-    const xSize = board.length;
-    const ySize = board[0].length;
+    const xSize = board[0].length;
+    const ySize = board.length;
     let bombsCount = 0;
     const bombsPositions = [];
     const emptyPositions = [];

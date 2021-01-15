@@ -34,28 +34,28 @@ describe('[Game class] - Capabilities atomic/specific test', () => {
     const _gamePickSurronding = Game.prototype.getPickSurronding;
     const mat = [
       [
-        { type: 2, value: null },
-        { type: 0, value: null },
-        { type: 1, value: null },
-        { type: 0, value: null },
+        { type: 2, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 1, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
       ],
       [
-        { type: 1, value: null },
-        { type: 0, value: null },
-        { type: 1, value: null },
-        { type: 0, value: null },
+        { type: 1, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 1, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
       ],
       [
-        { type: 0, value: null },
-        { type: 0, value: null },
-        { type: 0, value: null },
-        { type: 0, value: null },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
       ],
       [
-        { type: 0, value: null },
-        { type: 0, value: null },
-        { type: 1, value: null },
-        { type: 0, value: null },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 1, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
       ],
     ];
 
@@ -85,28 +85,28 @@ describe('[Game class] - Capabilities atomic/specific test', () => {
     const _gamePickSurronding = Game.prototype.getPickSurronding;
     const mat = [
       [
-        { type: 3, value: null },
-        { type: 0, value: null },
-        { type: 1, value: null },
-        { type: 0, value: null },
+        { type: 3, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 1, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
       ],
       [
-        { type: 1, value: null },
-        { type: 0, value: null },
-        { type: 0, value: null },
-        { type: 0, value: null },
+        { type: 1, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
       ],
       [
-        { type: 0, value: null },
-        { type: 0, value: null },
-        { type: 0, value: null },
-        { type: 0, value: null },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
       ],
       [
-        { type: 0, value: null },
-        { type: 0, value: null },
-        { type: 0, value: null },
-        { type: 0, value: null },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
       ],
     ];
 
@@ -138,43 +138,43 @@ describe('[Game class] - Capabilities atomic/specific test', () => {
 
     const mat = [
       [
-        { type: 1, value: null },
-        { type: 1, value: null },
-        { type: 0, value: null },
-        { type: 0, value: null },
+        { type: 1, value: null, isFlagged: false },
+        { type: 1, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
       ],
       [
-        { type: 1, value: null },
-        { type: 0, value: null },
-        { type: 0, value: null },
-        { type: 0, value: null },
+        { type: 1, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
       ],
       [
-        { type: 0, value: null },
-        { type: 0, value: null },
-        { type: 0, value: null },
-        { type: 0, value: null },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
+        { type: 0, value: null, isFlagged: false },
       ],
     ];
 
     expect(Game.prototype.setBoardValues(mat)).toEqual([
       [
-        { type: 1, value: null },
-        { type: 1, value: null },
-        { type: 0, value: 1 },
-        { type: 0, value: 0 },
+        { type: 1, value: null, isFlagged: false },
+        { type: 1, value: null, isFlagged: false },
+        { type: 0, value: 1, isFlagged: false },
+        { type: 0, value: 0, isFlagged: false },
       ],
       [
-        { type: 1, value: null },
-        { type: 0, value: 3 },
-        { type: 0, value: 1 },
-        { type: 0, value: 0 },
+        { type: 1, value: null, isFlagged: false },
+        { type: 0, value: 3, isFlagged: false },
+        { type: 0, value: 1, isFlagged: false },
+        { type: 0, value: 0, isFlagged: false },
       ],
       [
-        { type: 0, value: 1 },
-        { type: 0, value: 1 },
-        { type: 0, value: 0 },
-        { type: 0, value: 0 },
+        { type: 0, value: 1, isFlagged: false },
+        { type: 0, value: 1, isFlagged: false },
+        { type: 0, value: 0, isFlagged: false },
+        { type: 0, value: 0, isFlagged: false },
       ],
     ]);
   });
@@ -182,7 +182,7 @@ describe('[Game class] - Capabilities atomic/specific test', () => {
 
 describe('Simple Game flow', () => {
   const bombs = 3;
-  const _simpleGame = new Game(3, 4, bombs);
+  const _simpleGame = new Game(5, 3, bombs);
   const _gameBoard = _simpleGame.getBoard();
   const { bombsPositions, emptyPositions } = _simpleGame.findBombEmptyPositions(_gameBoard);
 
