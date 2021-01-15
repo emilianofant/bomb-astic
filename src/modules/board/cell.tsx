@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { BoardCell, squareContentTypes, Tuple } from '../core/types.d';
+import { BoardCell, squareContentTypes, Tuple } from '../../types.d';
 
 interface ICellProps {
   boardCell: BoardCell;

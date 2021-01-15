@@ -1,4 +1,4 @@
-import { Board, squareContentTypes, Tuple } from './types.d';
+import { Board, squareContentTypes, Tuple } from '../../types.d';
 
 /**
  * Core class is the main class that contains the definitions

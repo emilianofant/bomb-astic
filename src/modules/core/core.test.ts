@@ -1,5 +1,5 @@
 import Core from './core';
-import { Board, squareContentTypes } from './types.d';
+import { Board, squareContentTypes } from '../../types.d';
 
 describe('Core class tests', () => {
   const core = new Core();

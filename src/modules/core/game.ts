@@ -1,6 +1,6 @@
 import { GAME_DIFFICULTIES } from '../../constants/constants';
 import Core from './core';
-import { Board, IBoardStatus, IDifficulty, squareContentTypes, Tuple } from './types.d';
+import { Board, IBoardStatus, IDifficulty, squareContentTypes, Tuple } from '../../types.d';
 
 class Game {
   private _isRunning: boolean;

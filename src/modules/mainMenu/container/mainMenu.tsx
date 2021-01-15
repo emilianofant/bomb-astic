@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { useState } from 'react';
-import { IBoardDimensions, IDifficulty } from '../../core/types.d';
+import { IBoardDimensions, IDifficulty } from '../../../types.d';
 import './mainMenu.scss';
 import { useHistory } from 'react-router-dom';
 import { GAME_DIFFICULTIES } from '../../../constants/constants';

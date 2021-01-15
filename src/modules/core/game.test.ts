@@ -1,4 +1,4 @@
-import { Board, squareContentTypes } from './types.d';
+import { Board, squareContentTypes } from '../../types.d';
 import Game from './game';
 
 describe('[Game class] - Capabilities atomic/specific test', () => {

@@ -1,6 +1,6 @@
 import { FunctionComponent, useContext, useEffect, useState } from 'react';
 import AppContext from '../../store/AppContext';
-import { Board, IBoardConfiguration } from '../../core/types.d';
+import { Board, IBoardConfiguration } from '../../../types.d';
 import './board.scss';
 import Cell from '../cell';
 import Game from '../../core/game';

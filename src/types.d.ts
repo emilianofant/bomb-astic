@@ -3,7 +3,7 @@ export type Board = Array<Array<BoardCell>>;
 export type BoardCell = {
   type: squareContentTypes;
   value: number | null;
-  isFlagged: boolean;
+  isFlagged?: boolean;
 };
 
 export type Tuple = Array<number>;
@@ -33,4 +33,13 @@ interface IBoardConfiguration {
 interface IBoardDimensions {
   w: number;
   h: number;
+}
+
+interface Score {
+  id: string;
+  startTime: string;
+  endTime: string;
+  difficulty: IDifficulty.name;
+  totalTime: string;
+  status: string;
 }
