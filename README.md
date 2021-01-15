@@ -1,12 +1,16 @@
 # bomb-astic
 A Javascript / React Minesweeper!
 
-
-
-***Note: I broke .git folder so I had issues commiting to `main` branch. `UI_Game` is the "master branch".***
-
+*Note: I broke .git folder so I had issues commiting to `main` branch. `UI_Game` is the "master branch".*
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Install
+
+*This project was developed using Node 12. If you have NVM, you may want to run `nvm use` previous to any installation.*
+
+1. Checkout this branch. 
+2. Run `npm i` or `yarn install`.
 
 ## Available Scripts
 
