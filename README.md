@@ -1,6 +1,11 @@
 # bomb-astic
 A Javascript / React Minesweeper!
 
+
+
+***Note: I broke .git folder so I had issues commiting to `main` branch. `UI_Game` is the "master branch".***
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
